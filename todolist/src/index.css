@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+.inputDiv {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-family: "Bagel Fat One", sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0;
+}
+
+body {
+  font-family: "IBM Plex Sans KR", sans-serif;
+}
+
+.inputText {
+  font-family: "IBM Plex Sans KR", sans-serif;
+}
+
+ul.todoList {
+  padding: 0;
+  list-style: none;
+}
+
+.inputDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.todoListDiv li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem;
+  gap: 0.5rem;
+}
+
+.inputText-wrapper {
+  position: relative;
+  width: 17vw;
+  height: 9vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cloud {
+  position: absolute;
+  width: 5vw;
+  height: 5vw;
+  /**/
+  min-width: 5vw;
+  min-height: 5vw;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 1;
+  background-color: #e9f1fb;
+}
+
+.cloud.left {
+  left: 12vw;
+}
+
+.cloud.mid-left {
+  left: 9vw;
+}
+
+.cloud.center {
+  left: 6vw;
+}
+
+.cloud.mid-right {
+  left: 3vw;
+}
+
+.cloud.right {
+  left: 0vw;
+}
+
+.inputText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 17vw;
+  height: 9vw;
+  /**/
+  min-width: 17vw;
+  min-height: 9vw;
+  border: none;
+  background: transparent;
+  z-index: 2; /* cloud 위로 오게*/
+  padding: 0 2vw;
+  font-size: 1rem;
+  outline: none;
+  color: #333;
+  text-align: center;
+}
+
+.inputBtn,
+.deleteBtn {
+  border-radius: 0.5rem;
+  border: 1px solid #e9f1fb;
+  background-color: #ffffff;
+  font-size: 0.8rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  font-family: "Bagel Fat One", sans-serif;
+}
+
+.inputBtn {
+  color: #82c8e5;
+  padding: 0.5rem;
+}
+
+.deleteBtn {
+  color: #ff355e;
+}
+
+/* 체크 박스 누르면 해당 css 보여짐*/
+.completed {
+  text-decoration: line-through; /* 취소선 */
+  color: #ccc;
+}
