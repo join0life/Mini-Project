@@ -1,0 +1,3 @@
+Hello, this is a sample text file.
+You are successfully fetching this file using JavaScript!
+Keep going—you’re learning fetch like a pro.
