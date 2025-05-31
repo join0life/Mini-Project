@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/main.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Diphylleia&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>날씨 앱 프로젝트</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="city-container">
+          <div class="city"></div>
+          <div class="today"></div>
+          <div id="search-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+              />
+            </svg>
+          </div>
+          <div class="search-box-container">
+            <input class="search-box" type="text" placeholder="도시명 입력" />
+          </div>
+        </div>
+        <div class="main">
+          <!-- svg + 기온 -->
+        </div>
+        <div class="next-temp">
+          <div class="tomorrow">
+            <!-- tomorrow 범위 고정 설정 + 기온 + svg -->
+          </div>
+          <div class="day-after-tomorrow">
+            <!-- day-after-tomorrow 범위 고정 설정 + 기온 + svg -->
+          </div>
+          <div class="three-days-later">
+            <!-- three-days-later 범위 고정 설정 + 기온 + svg -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
