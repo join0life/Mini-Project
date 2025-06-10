@@ -3,6 +3,7 @@ import Greeting from "./Greeting.jsx";
 import Clock from "./Clock.jsx";
 import Counter from "./Counter.jsx";
 import Toggle from "./Toggle.jsx";
+import Random from "./Random.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -11,5 +12,6 @@ root.render(
     <Clock />
     <Counter />
     <Toggle />
+    <Random />
   </>
 );
