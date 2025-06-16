@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+  font-family: "Noto sans KR", sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 2rem;
+  margin-top: 500px;
+  width: 100vw;
+}
+
+.main-img {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.main-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-container {
+  padding: 1rem 0;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.carousel {
+  display: flex;
+  gap: 1rem;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  cursor: pointer;
+  /* 브라우저별 스크롤바 안 보이게 */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 스크롤바 안 보이게 */
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel li {
+  width: auto;
+}
+
+.carousel li:hover {
+  transform: scale(1.05);
+  opacity: 0.5;
+  transition: transform 0.3s ease;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.scroll-btn {
+  z-index: 1;
+}
+
+.scroll-btn svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.scroll-btn.left {
+  left: 0.5rem;
+}
+
+.scroll-btn.right {
+  right: 0.5rem;
+}
+
+div.carousel {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: auto;
+}
+
+div.carousel div:hover {
+  transform: scale(1.05);
+  opacity: 0.5;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 720px) {
+  div.carousel {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+  }
+}
