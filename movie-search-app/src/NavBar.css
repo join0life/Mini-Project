@@ -1,0 +1,46 @@
+nav.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+}
+nav.navbar.scrolled {
+  background-color: rgb(0, 0, 0, 0.5); /* 스크롤 시 어두워짐 */
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.btn.search {
+  color: fff;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu-bar {
+  display: flex;
+  margin: 0;
+}
+
+.menu-bar li {
+  list-style: none;
+}
+
+.menu-bar li:hover > button {
+  color: #646cff;
+}
+
+.menu-bar li button {
+  color: #fff;
+}
