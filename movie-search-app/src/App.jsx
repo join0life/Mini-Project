@@ -26,6 +26,7 @@ function App() {
 
   const movieEndpoints = ["now_playing", "popular", "top_rated", "upcoming"];
   const tvEndpoints = ["airing_today", "on_the_air", "popular", "top_rated"];
+  const currentEndpoints = type === "movie" ? movieEndpoints : tvEndpoints;
 
   //검색 기능
   const handleSearch = async (query) => {
@@ -98,14 +99,12 @@ function App() {
         ) : (
           // 검색 결과 없을 땐 기존 리스트 보여주기
           <>
-            {movieEndpoints.map((endpoint, idx) => (
+            {currentEndpoints.map((endpoint, idx) => (
               <Media
                 key={endpoint}
                 title={titlesByType[type][idx]}
                 type={type}
-                endpoint={
-                  type === "movie" ? movieEndpoints[idx] : tvEndpoints[idx]
-                }
+                endpoint={endpoint}
               />
             ))}
           </>
