@@ -11,20 +11,18 @@ function NavBar({ onSearch, onTypeChange, selectedType }) {
     setSearchInput("");
   };
 
-  const handleScroll = () => {
-    setIsScrolled(window.scrollY > 50); // 스크롤 50px 이상이면 true
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll); // 컴포넌트 언마운트 시 이벤트 제거
-  };
-
   // 검색 함수
   const handleInputChange = (e) => {
     setSearchInput(e.target.value);
   };
 
   useEffect(() => {
-    handleScroll();
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
