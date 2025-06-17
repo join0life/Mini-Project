@@ -23,7 +23,7 @@ function Media({
     setPage((prev) => (prev === 1 ? MAX_PAGE : prev - 1));
   };
 
-  const handleScrollRight = (e) => {
+  const handleScrollRight = () => {
     setPage((prev) => (prev === MAX_PAGE ? 1 : prev + 1));
   };
 
