@@ -16,6 +16,7 @@ function NavBar({ onSearch, onTypeChange, selectedType }) {
     setSearchInput(e.target.value);
   };
 
+  // addEventListener와 removeEventListener는 useEffect 안에 넣어야 함
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
