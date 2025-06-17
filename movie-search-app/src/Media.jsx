@@ -29,7 +29,7 @@ function Media({
 
   useEffect(() => {
     handleLoad(page);
-  }, [page, endpoint, type]); // page, endpoint가 바뀌면 다시 fetch
+  }, [page, endpoint, type]); // page, endpoint, type이 바뀌면 재렌더링
 
   return (
     <div className="carousel-container">
