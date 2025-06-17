@@ -36,7 +36,7 @@ function App() {
   };
 
   const fetchRandomPoster = async () => {
-    const endpoint = type === "movie" ? "popular" : "popular";
+    const endpoint = type === "movie" ? "popular" : "airing_today";
     const { results } = await getMediaData({ type, endpoint, page: 1 });
     const filtered = results.filter((item) => item.poster_path);
     const random = filtered[Math.floor(Math.random() * filtered.length)];
