@@ -1,0 +1,131 @@
+.ItineraryItem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  /* border: 1px solid #e0e0e0; */
+}
+
+.ItineraryItem.editing input {
+  border: none;
+  outline: none;
+}
+
+.ItineraryItem .checkbox-wrapper {
+  min-width: 20px;
+}
+.ItineraryItem .edit-mode {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.ItineraryItem .edit-mode input {
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  width: 100%;
+  padding: 0.5rem;
+
+  line-height: 1.4;
+}
+.ItineraryItem .item-text {
+  width: 100%;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  font-size: 0.9rem;
+  cursor: text;
+  outline: none;
+  /* border: 1px solid #ececec; */
+  border: none;
+  line-height: 1.4;
+}
+
+.ItineraryItem input[type="checkbox"] {
+  appearance: none; /* 기본 스타일 제거 */
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgb(220, 197, 178);
+  border-radius: 50%; /* 원 모양 */
+  cursor: pointer;
+  position: relative;
+  margin: 1rem;
+}
+
+.ItineraryItem input[type="checkbox"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(220, 197, 178);
+  border-radius: 50%; /* 동그란 체크 표시 */
+}
+
+.ItineraryItem Button {
+  width: 20%;
+}
+
+.ItineraryItem .modal-btn {
+  border: none;
+  color: rgba(220, 197, 178, 0.7);
+  background-color: transparent;
+}
+.ItineraryItem .modal-btn:hover {
+  cursor: pointer;
+  color: rgb(220, 197, 178);
+  background-color: transparent;
+}
+
+.ItineraryItem .size-6 {
+  width: 90%;
+}
+
+.ItineraryItem .item-text-tags-date-wrapper {
+  width: 80%;
+}
+
+.ItineraryItem .sub-contents {
+  display: flex;
+  font-size: 0.8rem;
+  width: 100%;
+}
+
+.ItineraryItem .sub-contents .sub-tags {
+  justify-content: flex-start;
+  width: 50%;
+}
+/* 내용이 있을 때 */
+.ItineraryItem .sub-contents .sub-tags span:not(:empty) {
+  background-color: #f0e4d3;
+  padding: 1px 6px;
+  border-radius: 5px;
+}
+
+/* 내용이 없을 때 (빈 span) */
+.ItineraryItem .sub-contents .sub-tags span:empty {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  /* 또는 display: none; */
+}
+
+.ItineraryItem .sub-contents .sub-date {
+  justify-content: flex-end;
+  text-align: right;
+  width: 50%;
+  color: #d9a299;
+}
+
+/*checkbox가 체크 돼 있으면 item-text-tags-date-wrapper가 disabled*/
+.ItineraryItem .item-text-tags-date-wrapper.checked {
+  color: #b0b0b0;
+  text-decoration: line-through;
+}
+
+@media (max-width: 720px) {
+  .ItineraryItem .size-6 {
+    width: 50%;
+  }
+}

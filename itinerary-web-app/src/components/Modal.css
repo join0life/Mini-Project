@@ -1,0 +1,426 @@
+/* Modal.css - 모바일 최적화 추가 */
+
+.Modal {
+  position: fixed;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  z-index: 999;
+  /* 모바일 터치 스크롤 방지 */
+  touch-action: none;
+}
+
+.Modal .modal-body {
+  position: absolute;
+  top: 50%;
+  width: 400px;
+  height: 600px;
+  padding: 1.5rem 1rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 16px;
+  box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+  transform: translateY(-50%);
+  max-height: 600px;
+  overflow-y: auto;
+  /* 모바일 터치 스크롤 개선 */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 모바일 반응형 디자인 */
+/* @media (max-width: 768px) {
+  .Modal .modal-body {
+    width: 90vw;
+    height: 80vh;
+    max-height: 80vh;
+    margin: 0 auto;
+    top: 10vh;
+    transform: none;
+    border-radius: 12px;
+  }
+} */
+
+@media (max-width: 480px) {
+  .Modal .modal-body {
+    position: relative;
+    width: 90vw;
+    height: auto;
+    min-height: 300px;
+    max-height: calc(100vh - 40px);
+    top: auto;
+    transform: none;
+    margin: 20px auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* 모달 전체에 스크롤 적용 */
+  }
+}
+
+.Modal .btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.Modal .modal-body .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.Modal .modal-body .content-wrapper h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* 하루종일 스위치 스타일 - 모바일 터치 개선 */
+.Modal .modal-body .allday-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.Modal .modal-body .switch-allday {
+  position: relative;
+  width: 50px;
+  height: 24px;
+  background-color: #ddd;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  /* 모바일 터치 영역 확대 */
+  padding: 4px;
+  margin: -4px;
+  /* 터치 반응성 개선 */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.Modal .modal-body .switch-allday.active {
+  background-color: #dcc5b2;
+}
+
+.Modal .modal-body .switch-allday::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.Modal .modal-body .switch-allday.active::after {
+  transform: translateX(26px);
+}
+
+.Modal .modal-body .start-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.Modal .modal-body .start-wrapper span {
+  min-width: 40px;
+}
+
+.Modal .modal-body .end-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.Modal .modal-body .end-wrapper span {
+  min-width: 40px;
+}
+
+.Modal .modal-body input[type="date"],
+.Modal .modal-body input[type="time"] {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: 50%;
+  background-color: #f8f9fa;
+  /* 모바일 입력 개선 */
+  font-size: 16px; /* iOS zoom 방지 */
+  /* -webkit-appearance: none; */
+  touch-action: manipulation;
+}
+
+.Modal .modal-body input[type="time"] {
+  width: 40%;
+}
+
+/* 모바일에서 date/time 입력 스타일링 */
+@media (max-width: 768px) {
+  .Modal .modal-body input[type="date"],
+  .Modal .modal-body input[type="time"] {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .Modal .modal-body input[type="time"] {
+    width: 50%;
+  }
+
+  .Modal .modal-body .start-wrapper span,
+  .Modal .modal-body .end-wrapper span {
+    min-width: 40px;
+    margin-bottom: 0.25rem;
+  }
+}
+
+/* 태그 스타일 */
+.Modal .modal-body .tag-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.Modal .modal-body .tag-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.Modal .modal-body .tag-item {
+  padding: 0.3rem 0.8rem;
+  background-color: #e9ecef;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  /* 모바일 터치 개선 */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  min-height: 44px; /* 모바일 터치 타겟 최소 크기 */
+  display: flex;
+  align-items: center;
+}
+
+.Modal .modal-body .tag-item.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+/* 위치 스타일 */
+.Modal .modal-body .location-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.Modal .modal-body .location-wrapper span {
+  font-size: 0.9rem;
+}
+
+.Modal .modal-body .location-container {
+  position: relative;
+  width: 100%;
+}
+
+.Modal .modal-body .location-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  border: none;
+  /* 모바일 입력 개선 */
+  font-size: 16px; /* iOS zoom 방지 */
+  touch-action: manipulation;
+}
+
+.Modal .modal-body .location-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  max-height: 120px;
+  overflow-y: auto;
+  z-index: 1000;
+  /* 모바일 스크롤 개선 */
+  -webkit-overflow-scrolling: touch;
+}
+
+.Modal .modal-body .location-item {
+  padding: 0.5rem;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  /* 모바일 터치 개선 */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  min-height: 44px; /* 모바일 터치 타겟 최소 크기 */
+  display: flex;
+  align-items: center;
+}
+
+.Modal .modal-body .location-item:hover {
+  background-color: #f8f9fa;
+}
+
+.Modal .modal-body .location-item:last-child {
+  border-bottom: none;
+}
+
+/* 메모 스타일 */
+.Modal .modal-body .memo-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.Modal .modal-body .memo-wrapper span {
+  font-size: 0.9rem;
+}
+
+.Modal .modal-body textarea {
+  width: 100%;
+  height: 80px;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  resize: vertical;
+  font-family: inherit;
+  /* 모바일 입력 개선 */
+  font-size: 16px; /* iOS zoom 방지 */
+  touch-action: manipulation;
+}
+
+/* 공통 라벨 스타일 */
+.Modal .modal-body .content-wrapper > div > span:first-child {
+  font-weight: 500;
+  color: #333;
+}
+
+/* 제목 입력 스타일 */
+.Modal .modal-body .title-input {
+  width: 100%;
+  padding: 0.5rem 0;
+  border: none;
+  border-bottom: 2px solid #eee;
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-weight: bold;
+  outline: none;
+  transition: border-color 0.3s;
+  /* 모바일 입력 개선 */
+  font-size: 16px; /* iOS zoom 방지 */
+  touch-action: manipulation;
+}
+
+.Modal .modal-body .title-input:focus {
+  border-bottom-color: #dcc5b2;
+}
+
+.Modal .modal-body .title-input::placeholder {
+  color: #999;
+}
+
+.Modal .search-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.Modal .search-container > input[type="text"] {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  flex: 1;
+  /* 모바일 입력 개선 */
+  font-size: 16px; /* iOS zoom 방지 */
+  touch-action: manipulation;
+}
+
+.Modal .search-container > button {
+  background-color: #f0e4d3;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.8rem 1rem;
+  /* 모바일 터치 개선 */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  min-height: 44px; /* 모바일 터치 타겟 최소 크기 */
+  min-width: 60px;
+}
+
+.Modal .delete-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* 모바일 검색 결과 스타일링 개선 */
+.search-results {
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 8px;
+  /* 모바일 스크롤 개선 */
+  -webkit-overflow-scrolling: touch;
+}
+
+.search-results > div {
+  padding: 12px 8px; /* 모바일 터치를 위한 패딩 증가 */
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  /* 모바일 터치 개선 */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  min-height: 44px; /* 모바일 터치 타겟 최소 크기 */
+}
+
+/* 지도 모바일 최적화 */
+#map {
+  width: 100%;
+  height: 200px; /* 모바일에서 높이 조정 */
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  /* 모바일 터치 개선 */
+  touch-action: manipulation;
+}
+
+@media (max-width: 768px) {
+  #map {
+    height: 150px; /* 모바일에서 더 작은 높이 */
+  }
+}
+
+/* 모바일 터치 피드백 */
+@media (hover: none) and (pointer: coarse) {
+  .Modal .modal-body .tag-item:active,
+  .Modal .modal-body .location-item:active,
+  .Modal .search-container > button:active,
+  .Modal .modal-body .switch-allday:active {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: scale(0.98);
+    transition: all 0.1s ease;
+  }
+}

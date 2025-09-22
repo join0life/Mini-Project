@@ -1,0 +1,148 @@
+.Calendar {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.calendar-container {
+  flex: 1;
+  height: 100%;
+}
+/* 한국어 캘린더 전체 컨테이너 */
+.korean-calendar-container {
+  height: 100%;
+}
+
+/* 전체 캘린더 폰트 설정 */
+.rbc-calendar {
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* 커스텀 툴바 스타일 */
+.custom-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0;
+  gap: 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 10px;
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: gray;
+  font-size: 18px;
+  font-weight: bold;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-btn:hover {
+  background: transparent;
+  color: black;
+}
+
+.nav-btn:active {
+  transform: scale(0.95);
+}
+
+.toolbar-label {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  min-width: 200px;
+  text-align: center;
+}
+
+/* 시간 표시 스타일 */
+.rbc-time-gutter .rbc-timeslot-group {
+  font-size: 12px;
+  color: #666;
+}
+
+/* 오늘 날짜 강조 */
+.rbc-today {
+  background-color: #faf7f3 !important;
+}
+
+/* 월간 뷰에서 요일 헤더 스타일 */
+.rbc-header {
+  font-weight: 600;
+  /* padding: 10px 5px; */
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* 시간대 표시 개선 */
+.rbc-time-slot {
+  font-size: 11px;
+}
+
+/* 이벤트 텍스트 */
+.rbc-event-content {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 더보기 버튼 스타일 */
+.rbc-show-more {
+  background-color: #dcb5b2;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 2px 6px;
+  font-size: 11px;
+}
+
+/* 툴바 버튼 한국어 스타일 */
+.rbc-btn-group button {
+  font-weight: 500;
+}
+
+.rbc-btn-group button.rbc-active {
+  background-color: #dcb5b2;
+  border-color: #dcb5b2;
+}
+
+/* 시간 가이드 라인 */
+.rbc-time-view .rbc-current-time-indicator {
+  background-color: #dc3545;
+}
+
+/* 기본 툴바 숨기기 (커스텀 툴바 사용) */
+.rbc-toolbar {
+  display: none;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .korean-calendar-container {
+    height: 500px;
+  }
+
+  .custom-toolbar {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    gap: 15px;
+  }
+
+  .nav-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .toolbar-label {
+    font-size: 16px;
+    min-width: 150px;
+  }
+}

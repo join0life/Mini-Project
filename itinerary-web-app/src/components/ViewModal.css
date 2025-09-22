@@ -1,0 +1,354 @@
+.Modal {
+  position: fixed;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  z-index: 999;
+}
+
+.Modal .modal-body {
+  position: absolute;
+  top: 50%;
+  width: 400px;
+  height: 600px;
+  padding: 1.5rem 1rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 16px;
+  box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+  transform: translateY(-50%);
+  max-height: 600px; /* 원하는 최대 높이로 지정 */
+  overflow-y: auto; /* 내용이 많을 경우 스크롤 가능 */
+}
+
+.Modal .btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.Modal .modal-body .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.Modal .modal-body .content-wrapper h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* 하루종일 스위치 스타일 */
+.Modal .modal-body .allday-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.Modal .modal-body .switch-allday {
+  position: relative;
+  width: 50px;
+  height: 24px;
+  background-color: #ddd;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.Modal .modal-body .switch-allday.active {
+  background-color: #dcc5b2;
+}
+
+.Modal .modal-body .switch-allday::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.Modal .modal-body .switch-allday.active::after {
+  transform: translateX(26px);
+}
+
+.Modal .modal-body .start-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.Modal .modal-body .start-wrapper span {
+  min-width: 40px;
+}
+
+.Modal .modal-body .end-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.Modal .modal-body .end-wrapper span {
+  min-width: 40px;
+}
+
+.Modal .modal-body input[type="date"],
+.Modal .modal-body input[type="time"] {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: 50%;
+  background-color: #f8f9fa;
+}
+
+.Modal .modal-body input[type="time"] {
+  width: 40%;
+}
+
+/* 태그 스타일 */
+.Modal .modal-body .tag-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.Modal .modal-body .tag-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.Modal .modal-body .tag-item {
+  padding: 0.3rem 0.8rem;
+  background-color: #e9ecef;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.Modal .modal-body .tag-item.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+/* 위치 스타일 */
+.Modal .modal-body .location-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.Modal .modal-body .location-wrapper span {
+  font-size: 0.9rem;
+}
+
+.Modal .modal-body .location-container {
+  position: relative;
+  width: 100%;
+}
+
+.Modal .modal-body .location-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  border: none;
+}
+
+.Modal .modal-body .location-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  max-height: 120px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.Modal .modal-body .location-item {
+  padding: 0.5rem;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.Modal .modal-body .location-item:hover {
+  background-color: #f8f9fa;
+}
+
+.Modal .modal-body .location-item:last-child {
+  border-bottom: none;
+}
+
+/* 메모 스타일 */
+.Modal .modal-body .memo-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.Modal .modal-body .memo-wrapper span {
+  font-size: 0.9rem;
+}
+
+.Modal .modal-body textarea {
+  width: 100%;
+  height: 80px;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* 공통 라벨 스타일 */
+.Modal .modal-body .content-wrapper > div > span:first-child {
+  font-weight: 500;
+  color: #333;
+}
+
+/* 제목 입력 스타일 */
+.Modal .modal-body .title-input {
+  width: 100%;
+  padding: 0.5rem 0;
+  border: none;
+  border-bottom: 2px solid #eee;
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-weight: bold;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.Modal .modal-body .title-input:focus {
+  border-bottom-color: #dcc5b2;
+}
+
+.Modal .modal-body .title-input::placeholder {
+  color: #999;
+}
+
+/* .Modal .delete-btn-wrapper {
+  justify-content: center;
+  align-items: center;
+} */
+
+.Modal .search-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.Modal .search-container > input[type="text"] {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+
+.Modal .search-container > button {
+  background-color: #f0e4d3;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Modal .delete-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.view-section {
+  margin-bottom: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.view-section:last-child {
+  border-bottom: none;
+}
+
+.task-title {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.label {
+  display: inline-block;
+  width: 80px;
+  font-weight: bold;
+  color: #555;
+  margin-right: 10px;
+}
+
+.value {
+  color: #333;
+}
+
+.tags-display {
+  display: inline-block;
+}
+
+.tag-item {
+  display: inline-block;
+  background-color: #e3f2fd;
+  color: #1976d2;
+  padding: 4px 8px;
+  margin-right: 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.memo-display {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 5px;
+  white-space: pre-wrap;
+  color: #333;
+}
+
+.map-container {
+  margin-top: 10px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .label {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .task-title {
+    font-size: 20px;
+  }
+}

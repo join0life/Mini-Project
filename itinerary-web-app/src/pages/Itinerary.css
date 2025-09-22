@@ -1,0 +1,25 @@
+.Itinerary {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.ItineraryLists {
+  flex: 1;
+  display: flex;
+  height: 100%;
+  overflow-y: auto;
+  gap: 20px;
+  padding: 10px;
+}
+
+.Modal .label {
+  margin-right: 5px;
+}
+
+@media (max-width: 720px) {
+  .Itinerary {
+    flex-direction: column;
+  }
+}

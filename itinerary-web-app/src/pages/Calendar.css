@@ -1,0 +1,12 @@
+@media (max-width: 720px) {
+  .Calendar {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
+
+  .custom-toolbar {
+    background-color: white;
+  }
+}

@@ -1,0 +1,83 @@
+.LNB {
+  display: flex;
+  flex-direction: column;
+  /* min-width: 240px; */
+  width: 20%;
+  height: 100%;
+  border: 1px solid #f0e4d3;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.LNB a.selected,
+.LNB a:hover {
+  color: #d9a299;
+  font-weight: 600;
+  background-color: rgb(250, 247, 243);
+}
+
+.LNB a {
+  display: block;
+  color: #d9a299;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.LNB a div {
+  margin: 0.5rem;
+  padding: 10px 20px;
+}
+
+.LNB a:first-child div {
+  margin-top: 5rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 720px) {
+  .LNB {
+    border: none;
+    background-color: white;
+    height: 60px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .LNB .list-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+  }
+
+  .LNB .list-wrapper a {
+    background-color: white;
+    /* border: 1px solid #f0e4d3; */
+    padding: 0;
+    margin: 0;
+    color: #d9a299;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 0.5px solid #d9a299;
+    justify-content: center;
+  }
+
+  .LNB a.selected,
+  .LNB a:hover {
+    border-bottom: 1px solid #d9a299;
+  }
+
+  .LNB a:first-child div {
+    margin: 0;
+    padding: 0;
+  }
+
+  .LNB a div {
+    margin: 0;
+    padding: 0;
+  }
+}

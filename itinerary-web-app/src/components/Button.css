@@ -1,0 +1,25 @@
+.Button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  display: inline-block;
+  white-space: nowrap;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.Button_default {
+  background-color: white;
+  color: black;
+}
+
+.Button_negative {
+  background-color: red;
+  color: white;
+  padding: 0.5rem 0.5rem;
+}
+
+.Button_edit {
+  background-color: white;
+  color: red;
+}
